@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.AbstractApplicationContext;
 
 
-@Configuration
-@ComponentScan
+//http://www.pretechsol.com/2013/11/springdata-jpa-with-mysql-example.html#.WBnrkOiLSUk
+
 public class CustomerController {
 
     public static void main(String[] args){

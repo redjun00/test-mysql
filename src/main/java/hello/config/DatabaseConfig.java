@@ -1,6 +1,6 @@
 package hello.config;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
+import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -19,12 +19,12 @@ public class DatabaseConfig {
 
     @Bean
     public DataSource dateSource(){
-        MysqlDataSource mysqlDataSource = new MysqlDataSource();
-        mysqlDataSource.setDatabaseName("com.mysql.jdbc.Driver");
-        mysqlDataSource.setUrl("jdbc:mysql://localhost:3306/hibernateschema");
-        mysqlDataSource.setUser("root");
-        mysqlDataSource.setPassword("4321");
-        return mysqlDataSource;
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/hibernateschema");
+        basicDataSource.setUsername("root");
+        basicDataSource.setPassword("4321");
+        return basicDataSource;
     }
 
     @Bean
