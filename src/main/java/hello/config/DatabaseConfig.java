@@ -21,9 +21,9 @@ public class DatabaseConfig {
     public DataSource dateSource(){
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        basicDataSource.setUrl("jdbc:mysql://localhost:3306/hibernateschema");
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/store");
         basicDataSource.setUsername("root");
-        basicDataSource.setPassword("4321");
+        basicDataSource.setPassword("root");
         return basicDataSource;
     }
 
@@ -35,6 +35,7 @@ public class DatabaseConfig {
         lef.setPackagesToScan("hello");
         return lef;
     }
+
     @Bean
     public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
@@ -43,6 +44,7 @@ public class DatabaseConfig {
         hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
         return hibernateJpaVendorAdapter;
     }
+
     @Bean
     public PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager();
